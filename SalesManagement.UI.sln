@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManagement.UI", "SalesManagement.UI\SalesManagement.UI.csproj", "{A196F77D-FE58-43F2-A6EF-D56FF3DB9AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManagement.Data", "SalesManagement.Data\SalesManagement.Data.csproj", "{6B11D317-EF80-4F93-B990-502F8B872119}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A196F77D-FE58-43F2-A6EF-D56FF3DB9AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A196F77D-FE58-43F2-A6EF-D56FF3DB9AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A196F77D-FE58-43F2-A6EF-D56FF3DB9AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A196F77D-FE58-43F2-A6EF-D56FF3DB9AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B11D317-EF80-4F93-B990-502F8B872119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B11D317-EF80-4F93-B990-502F8B872119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B11D317-EF80-4F93-B990-502F8B872119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B11D317-EF80-4F93-B990-502F8B872119}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

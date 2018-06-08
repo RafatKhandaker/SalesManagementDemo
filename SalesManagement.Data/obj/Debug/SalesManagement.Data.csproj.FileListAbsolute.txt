@@ -1,0 +1,10 @@
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\bin\Debug\SalesManagement.Data.dll.config
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\bin\Debug\SalesManagement.Data.dll
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\bin\Debug\SalesManagement.Data.pdb
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\bin\Debug\EntityFramework.dll
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\bin\Debug\EntityFramework.xml
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.csprojResolveAssemblyReference.cache
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.dll
+c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.pdb
