@@ -25,7 +25,6 @@ namespace SalesManagement.Data
         public string CustomerLastName { get; set; }
         public int AccountType { get; set; }
         public string DeliveryAddress { get; set; }
-        public Nullable<decimal> TotalCost { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

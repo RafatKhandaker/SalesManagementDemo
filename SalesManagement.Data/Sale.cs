@@ -21,7 +21,7 @@ namespace SalesManagement.Data
         public Nullable<int> UserId { get; set; }
     
         public virtual Budget Budget { get; set; }
-        public virtual Order Order { get; set; }
         public virtual User User { get; set; }
+        public virtual Order Order { get; set; }
     }
 }
