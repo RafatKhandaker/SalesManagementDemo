@@ -1,0 +1,5 @@
+C:\GitProjects\SalesManagementDemo\SalesManagement.Model\bin\Debug\SalesManagement.Model.dll
+C:\GitProjects\SalesManagementDemo\SalesManagement.Model\bin\Debug\SalesManagement.Model.pdb
+C:\GitProjects\SalesManagementDemo\SalesManagement.Model\obj\Debug\SalesManagement.Model.csprojResolveAssemblyReference.cache
+C:\GitProjects\SalesManagementDemo\SalesManagement.Model\obj\Debug\SalesManagement.Model.dll
+C:\GitProjects\SalesManagementDemo\SalesManagement.Model\obj\Debug\SalesManagement.Model.pdb
