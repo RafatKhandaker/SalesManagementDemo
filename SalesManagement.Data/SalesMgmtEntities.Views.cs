@@ -11,7 +11,7 @@ using System.Data.Entity.Infrastructure.MappingViews;
 
 [assembly: DbMappingViewCacheTypeAttribute(
     typeof(SalesManagement.Data.SalesManagementDemoEntities),
-    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsf978bfb0bffb39a16ce69d516664a54789d518160ab648db85ee252d85d3914d))]
+    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsb434a9db72a338f6b568a7d03d7ba679369595099fceb017935a0e4db51dc193))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -22,15 +22,15 @@ namespace Edm_EntityMappingGeneratedViews
     /// <summary>
     /// Implements a mapping view cache.
     /// </summary>
-    [GeneratedCode("Entity Framework 6 Power Tools", "0.9.2.0")]
-    internal sealed class ViewsForBaseEntitySetsf978bfb0bffb39a16ce69d516664a54789d518160ab648db85ee252d85d3914d : DbMappingViewCache
+    [GeneratedCode("Entity Framework Power Tools", "0.9.0.0")]
+    internal sealed class ViewsForBaseEntitySetsb434a9db72a338f6b568a7d03d7ba679369595099fceb017935a0e4db51dc193 : DbMappingViewCache
     {
         /// <summary>
         /// Gets a hash value computed over the mapping closure.
         /// </summary>
         public override string MappingHashValue
         {
-            get { return "f978bfb0bffb39a16ce69d516664a54789d518160ab648db85ee252d85d3914d"; }
+            get { return "b434a9db72a338f6b568a7d03d7ba679369595099fceb017935a0e4db51dc193"; }
         }
 
         /// <summary>
@@ -57,72 +57,72 @@ namespace Edm_EntityMappingGeneratedViews
                 return GetView1();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.Sales")
+            if (extentName == "SalesManagementDemoModelStoreContainer.Inventory")
             {
                 return GetView2();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Budgets")
+            if (extentName == "SalesManagementDemoModelStoreContainer.Order_Details")
             {
                 return GetView3();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Departments")
+            if (extentName == "SalesManagementDemoModelStoreContainer.Orders")
             {
                 return GetView4();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Sales")
+            if (extentName == "SalesManagementDemoModelStoreContainer.Products")
             {
                 return GetView5();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.Inventory")
+            if (extentName == "SalesManagementDemoModelStoreContainer.Roles")
             {
                 return GetView6();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.Products")
+            if (extentName == "SalesManagementDemoModelStoreContainer.Sales")
             {
                 return GetView7();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Inventories")
+            if (extentName == "SalesManagementDemoModelStoreContainer.User_Details")
             {
                 return GetView8();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Products")
+            if (extentName == "SalesManagementDemoModelStoreContainer.Users")
             {
                 return GetView9();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.Order_Details")
+            if (extentName == "SalesManagementDemoEntities.Budgets")
             {
                 return GetView10();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.Orders")
+            if (extentName == "SalesManagementDemoEntities.Departments")
             {
                 return GetView11();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Order_Details")
+            if (extentName == "SalesManagementDemoEntities.Inventories")
             {
                 return GetView12();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Orders")
+            if (extentName == "SalesManagementDemoEntities.Order_Details")
             {
                 return GetView13();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.Roles")
+            if (extentName == "SalesManagementDemoEntities.Orders")
             {
                 return GetView14();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.Users")
+            if (extentName == "SalesManagementDemoEntities.Products")
             {
                 return GetView15();
             }
@@ -132,17 +132,17 @@ namespace Edm_EntityMappingGeneratedViews
                 return GetView16();
             }
 
-            if (extentName == "SalesManagementDemoEntities.Users")
+            if (extentName == "SalesManagementDemoEntities.Sales")
             {
                 return GetView17();
             }
 
-            if (extentName == "SalesManagementDemoModelStoreContainer.User_Details")
+            if (extentName == "SalesManagementDemoEntities.User_Details")
             {
                 return GetView18();
             }
 
-            if (extentName == "SalesManagementDemoEntities.User_Details")
+            if (extentName == "SalesManagementDemoEntities.Users")
             {
                 return GetView19();
             }
@@ -191,92 +191,10 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for SalesManagementDemoModelStoreContainer.Sales.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView2()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Sales
-        [SalesManagementDemoModel.Store.Sales](T1.Sales_Id, T1.Sales_OrdersId, T1.Sales_InventoryId, T1.Sales_BudgetId, T1.Sales_UserId)
-    FROM (
-        SELECT 
-            T.Id AS Sales_Id, 
-            T.OrdersId AS Sales_OrdersId, 
-            T.InventoryId AS Sales_InventoryId, 
-            T.BudgetId AS Sales_BudgetId, 
-            T.UserId AS Sales_UserId, 
-            True AS _from0
-        FROM SalesManagementDemoEntities.Sales AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for SalesManagementDemoEntities.Budgets.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView3()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Budgets
-        [SalesManagementDemoModel.Budget](T1.Budget_Id, T1.Budget_DepartmentId, T1.Budget_Amounted, T1.Budget_Gains, T1.Budget_Loss, T1.Budget_MonthlyReportDate)
-    FROM (
-        SELECT 
-            T.Id AS Budget_Id, 
-            T.DepartmentId AS Budget_DepartmentId, 
-            T.Amounted AS Budget_Amounted, 
-            T.Gains AS Budget_Gains, 
-            T.Loss AS Budget_Loss, 
-            T.MonthlyReportDate AS Budget_MonthlyReportDate, 
-            True AS _from0
-        FROM SalesManagementDemoModelStoreContainer.Budget AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for SalesManagementDemoEntities.Departments.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView4()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Departments
-        [SalesManagementDemoModel.Department](T1.Department_Id, T1.Department_Name)
-    FROM (
-        SELECT 
-            T.Id AS Department_Id, 
-            T.Name AS Department_Name, 
-            True AS _from0
-        FROM SalesManagementDemoModelStoreContainer.Departments AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for SalesManagementDemoEntities.Sales.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView5()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Sales
-        [SalesManagementDemoModel.Sale](T1.Sale_Id, T1.Sale_OrdersId, T1.Sale_InventoryId, T1.Sale_BudgetId, T1.Sale_UserId)
-    FROM (
-        SELECT 
-            T.Id AS Sale_Id, 
-            T.OrdersId AS Sale_OrdersId, 
-            T.InventoryId AS Sale_InventoryId, 
-            T.BudgetId AS Sale_BudgetId, 
-            T.UserId AS Sale_UserId, 
-            True AS _from0
-        FROM SalesManagementDemoModelStoreContainer.Sales AS T
-    ) AS T1");
-        }
-
-        /// <summary>
         /// Gets the view for SalesManagementDemoModelStoreContainer.Inventory.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView6()
+        private static DbMappingView GetView2()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Inventory
@@ -292,67 +210,10 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for SalesManagementDemoModelStoreContainer.Products.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView7()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Products
-        [SalesManagementDemoModel.Store.Products](T1.Products_Id, T1.Products_Name, T1.Products_Cost)
-    FROM (
-        SELECT 
-            T.Id AS Products_Id, 
-            T.Name AS Products_Name, 
-            T.Cost AS Products_Cost, 
-            True AS _from0
-        FROM SalesManagementDemoEntities.Products AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for SalesManagementDemoEntities.Inventories.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView8()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Inventories
-        [SalesManagementDemoModel.Inventory](T1.Inventory_Id, T1.Inventory_ProductId, T1.Inventory_InStock)
-    FROM (
-        SELECT 
-            T.Id AS Inventory_Id, 
-            T.ProductId AS Inventory_ProductId, 
-            T.InStock AS Inventory_InStock, 
-            True AS _from0
-        FROM SalesManagementDemoModelStoreContainer.Inventory AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for SalesManagementDemoEntities.Products.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView9()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Products
-        [SalesManagementDemoModel.Product](T1.Product_Id, T1.Product_Name, T1.Product_Cost)
-    FROM (
-        SELECT 
-            T.Id AS Product_Id, 
-            T.Name AS Product_Name, 
-            T.Cost AS Product_Cost, 
-            True AS _from0
-        FROM SalesManagementDemoModelStoreContainer.Products AS T
-    ) AS T1");
-        }
-
-        /// <summary>
         /// Gets the view for SalesManagementDemoModelStoreContainer.Order_Details.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView10()
+        private static DbMappingView GetView3()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Order_Details
@@ -374,7 +235,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for SalesManagementDemoModelStoreContainer.Orders.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView11()
+        private static DbMappingView GetView4()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Orders
@@ -391,10 +252,168 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for SalesManagementDemoEntities.Order_Details.
+        /// Gets the view for SalesManagementDemoModelStoreContainer.Products.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView5()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Products
+        [SalesManagementDemoModel.Store.Products](T1.Products_Id, T1.Products_Name, T1.Products_Cost)
+    FROM (
+        SELECT 
+            T.Id AS Products_Id, 
+            T.Name AS Products_Name, 
+            T.Cost AS Products_Cost, 
+            True AS _from0
+        FROM SalesManagementDemoEntities.Products AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoModelStoreContainer.Roles.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView6()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Roles
+        [SalesManagementDemoModel.Store.Roles](T1.Roles_Id, T1.Roles_RoleName)
+    FROM (
+        SELECT 
+            T.Id AS Roles_Id, 
+            T.RoleName AS Roles_RoleName, 
+            True AS _from0
+        FROM SalesManagementDemoEntities.Roles AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoModelStoreContainer.Sales.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView7()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Sales
+        [SalesManagementDemoModel.Store.Sales](T1.Sales_Id, T1.Sales_OrdersId, T1.Sales_InventoryId, T1.Sales_BudgetId, T1.Sales_UserId)
+    FROM (
+        SELECT 
+            T.Id AS Sales_Id, 
+            T.OrdersId AS Sales_OrdersId, 
+            T.InventoryId AS Sales_InventoryId, 
+            T.BudgetId AS Sales_BudgetId, 
+            T.UserId AS Sales_UserId, 
+            True AS _from0
+        FROM SalesManagementDemoEntities.Sales AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoModelStoreContainer.User_Details.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView8()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing User_Details
+        [SalesManagementDemoModel.Store.User_Details](T1.[User_Details.Id], T1.[User_Details.UserId], T1.[User_Details.FirstName], T1.[User_Details.LastName], T1.[User_Details.Email])
+    FROM (
+        SELECT 
+            T.Id AS [User_Details.Id], 
+            T.UserId AS [User_Details.UserId], 
+            T.FirstName AS [User_Details.FirstName], 
+            T.LastName AS [User_Details.LastName], 
+            T.Email AS [User_Details.Email], 
+            True AS _from0
+        FROM SalesManagementDemoEntities.User_Details AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoModelStoreContainer.Users.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView9()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Users
+        [SalesManagementDemoModel.Store.Users](T1.Users_Id, T1.Users_UserName, T1.Users_PassWord, T1.Users_RoleId)
+    FROM (
+        SELECT 
+            T.Id AS Users_Id, 
+            T.UserName AS Users_UserName, 
+            T.PassWord AS Users_PassWord, 
+            T.RoleId AS Users_RoleId, 
+            True AS _from0
+        FROM SalesManagementDemoEntities.Users AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoEntities.Budgets.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView10()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Budgets
+        [SalesManagementDemoModel.Budget](T1.Budget_Id, T1.Budget_DepartmentId, T1.Budget_Amounted, T1.Budget_Gains, T1.Budget_Loss, T1.Budget_MonthlyReportDate)
+    FROM (
+        SELECT 
+            T.Id AS Budget_Id, 
+            T.DepartmentId AS Budget_DepartmentId, 
+            T.Amounted AS Budget_Amounted, 
+            T.Gains AS Budget_Gains, 
+            T.Loss AS Budget_Loss, 
+            T.MonthlyReportDate AS Budget_MonthlyReportDate, 
+            True AS _from0
+        FROM SalesManagementDemoModelStoreContainer.Budget AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoEntities.Departments.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView11()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Departments
+        [SalesManagementDemoModel.Department](T1.Department_Id, T1.Department_Name)
+    FROM (
+        SELECT 
+            T.Id AS Department_Id, 
+            T.Name AS Department_Name, 
+            True AS _from0
+        FROM SalesManagementDemoModelStoreContainer.Departments AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoEntities.Inventories.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView12()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Inventories
+        [SalesManagementDemoModel.Inventory](T1.Inventory_Id, T1.Inventory_ProductId, T1.Inventory_InStock)
+    FROM (
+        SELECT 
+            T.Id AS Inventory_Id, 
+            T.ProductId AS Inventory_ProductId, 
+            T.InStock AS Inventory_InStock, 
+            True AS _from0
+        FROM SalesManagementDemoModelStoreContainer.Inventory AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoEntities.Order_Details.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView13()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Order_Details
@@ -416,7 +435,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for SalesManagementDemoEntities.Orders.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView13()
+        private static DbMappingView GetView14()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Orders
@@ -433,40 +452,21 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for SalesManagementDemoModelStoreContainer.Roles.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView14()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing Roles
-        [SalesManagementDemoModel.Store.Roles](T1.Roles_Id, T1.Roles_RoleName)
-    FROM (
-        SELECT 
-            T.Id AS Roles_Id, 
-            T.RoleName AS Roles_RoleName, 
-            True AS _from0
-        FROM SalesManagementDemoEntities.Roles AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for SalesManagementDemoModelStoreContainer.Users.
+        /// Gets the view for SalesManagementDemoEntities.Products.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView15()
         {
             return new DbMappingView(@"
-    SELECT VALUE -- Constructing Users
-        [SalesManagementDemoModel.Store.Users](T1.Users_Id, T1.Users_UserName, T1.Users_PassWord, T1.Users_RoleId)
+    SELECT VALUE -- Constructing Products
+        [SalesManagementDemoModel.Product](T1.Product_Id, T1.Product_Name, T1.Product_Cost)
     FROM (
         SELECT 
-            T.Id AS Users_Id, 
-            T.UserName AS Users_UserName, 
-            T.PassWord AS Users_PassWord, 
-            T.RoleId AS Users_RoleId, 
+            T.Id AS Product_Id, 
+            T.Name AS Product_Name, 
+            T.Cost AS Product_Cost, 
             True AS _from0
-        FROM SalesManagementDemoEntities.Users AS T
+        FROM SalesManagementDemoModelStoreContainer.Products AS T
     ) AS T1");
         }
 
@@ -489,43 +489,23 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for SalesManagementDemoEntities.Users.
+        /// Gets the view for SalesManagementDemoEntities.Sales.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView17()
         {
             return new DbMappingView(@"
-    SELECT VALUE -- Constructing Users
-        [SalesManagementDemoModel.User](T1.User_Id, T1.User_UserName, T1.User_PassWord, T1.User_RoleId)
+    SELECT VALUE -- Constructing Sales
+        [SalesManagementDemoModel.Sale](T1.Sale_Id, T1.Sale_OrdersId, T1.Sale_InventoryId, T1.Sale_BudgetId, T1.Sale_UserId)
     FROM (
         SELECT 
-            T.Id AS User_Id, 
-            T.UserName AS User_UserName, 
-            T.PassWord AS User_PassWord, 
-            T.RoleId AS User_RoleId, 
+            T.Id AS Sale_Id, 
+            T.OrdersId AS Sale_OrdersId, 
+            T.InventoryId AS Sale_InventoryId, 
+            T.BudgetId AS Sale_BudgetId, 
+            T.UserId AS Sale_UserId, 
             True AS _from0
-        FROM SalesManagementDemoModelStoreContainer.Users AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for SalesManagementDemoModelStoreContainer.User_Details.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView18()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing User_Details
-        [SalesManagementDemoModel.Store.User_Details](T1.[User_Details.Id], T1.[User_Details.UserId], T1.[User_Details.FirstName], T1.[User_Details.LastName], T1.[User_Details.Email])
-    FROM (
-        SELECT 
-            T.Id AS [User_Details.Id], 
-            T.UserId AS [User_Details.UserId], 
-            T.FirstName AS [User_Details.FirstName], 
-            T.LastName AS [User_Details.LastName], 
-            T.Email AS [User_Details.Email], 
-            True AS _from0
-        FROM SalesManagementDemoEntities.User_Details AS T
+        FROM SalesManagementDemoModelStoreContainer.Sales AS T
     ) AS T1");
         }
 
@@ -533,7 +513,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for SalesManagementDemoEntities.User_Details.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView19()
+        private static DbMappingView GetView18()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing User_Details
@@ -547,6 +527,26 @@ namespace Edm_EntityMappingGeneratedViews
             T.Email AS [User_Details.Email], 
             True AS _from0
         FROM SalesManagementDemoModelStoreContainer.User_Details AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for SalesManagementDemoEntities.Users.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView19()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing Users
+        [SalesManagementDemoModel.User](T1.User_Id, T1.User_UserName, T1.User_PassWord, T1.User_RoleId)
+    FROM (
+        SELECT 
+            T.Id AS User_Id, 
+            T.UserName AS User_UserName, 
+            T.PassWord AS User_PassWord, 
+            T.RoleId AS User_RoleId, 
+            True AS _from0
+        FROM SalesManagementDemoModelStoreContainer.Users AS T
     ) AS T1");
         }
     }

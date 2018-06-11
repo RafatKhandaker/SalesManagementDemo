@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+    <EntitySetMapping Name="Budgets">
+      <EntityTypeMapping TypeName="masterModel.Budget">
+        <MappingFragment StoreEntitySet="Budget">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="Amounted" ColumnName="Amounted" />
+          <ScalarProperty Name="Gains" ColumnName="Gains" />
+          <ScalarProperty Name="Loss" ColumnName="Loss" />
+          <ScalarProperty Name="MonthlyReportDate" ColumnName="MonthlyReportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="masterModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="masterModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Details">
+      <EntityTypeMapping TypeName="masterModel.Order_Details">
+        <MappingFragment StoreEntitySet="Order_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="masterModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="masterModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="masterModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="masterModel.Sale">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrdersId" ColumnName="OrdersId" />
+          <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
+          <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAnswers">
+      <EntityTypeMapping TypeName="masterModel.tblAnswer">
+        <MappingFragment StoreEntitySet="tblAnswers">
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="SurveyDate" ColumnName="SurveyDate" />
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCities">
+      <EntityTypeMapping TypeName="masterModel.tblCity">
+        <MappingFragment StoreEntitySet="tblCity">
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="City_Abbr" ColumnName="City_Abbr" />
+          <ScalarProperty Name="City_Description" ColumnName="City_Description" />
+          <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCustomers">
+      <EntityTypeMapping TypeName="masterModel.tblCustomer">
+        <MappingFragment StoreEntitySet="tblCustomer">
+          <ScalarProperty Name="CustID" ColumnName="CustID" />
+          <ScalarProperty Name="CustNumber" ColumnName="CustNumber" />
+          <ScalarProperty Name="CustName" ColumnName="CustName" />
+          <ScalarProperty Name="CustOfficeAddress1" ColumnName="CustOfficeAddress1" />
+          <ScalarProperty Name="CustOfficeAddress2" ColumnName="CustOfficeAddress2" />
+          <ScalarProperty Name="CustOfficeCity" ColumnName="CustOfficeCity" />
+          <ScalarProperty Name="CustOfficeState" ColumnName="CustOfficeState" />
+          <ScalarProperty Name="CustOfficeZip" ColumnName="CustOfficeZip" />
+          <ScalarProperty Name="CustPhoneNumber" ColumnName="CustPhoneNumber" />
+          <ScalarProperty Name="CustFaxNumber" ColumnName="CustFaxNumber" />
+          <ScalarProperty Name="CustRouteNumber" ColumnName="CustRouteNumber" />
+          <ScalarProperty Name="CustSalesRepNumber" ColumnName="CustSalesRepNumber" />
+          <ScalarProperty Name="CustOrderEntryContactName" ColumnName="CustOrderEntryContactName" />
+          <ScalarProperty Name="CustPromoGroup" ColumnName="CustPromoGroup" />
+          <ScalarProperty Name="CustPriceGroup" ColumnName="CustPriceGroup" />
+          <ScalarProperty Name="CustPaymentTermsCode" ColumnName="CustPaymentTermsCode" />
+          <ScalarProperty Name="CustPaymentType" ColumnName="CustPaymentType" />
+          <ScalarProperty Name="CustBillingAddress1" ColumnName="CustBillingAddress1" />
+          <ScalarProperty Name="CustBillingAddress2" ColumnName="CustBillingAddress2" />
+          <ScalarProperty Name="CustBillingCity" ColumnName="CustBillingCity" />
+          <ScalarProperty Name="CustBillingState" ColumnName="CustBillingState" />
+          <ScalarProperty Name="CustBillingZip" ColumnName="CustBillingZip" />
+          <ScalarProperty Name="CustRouteVisitWeekDay" ColumnName="CustRouteVisitWeekDay" />
+          <ScalarProperty Name="CustSequence" ColumnName="CustSequence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCustPaymentTerms">
+      <EntityTypeMapping TypeName="masterModel.tblCustPaymentTerm">
+        <MappingFragment StoreEntitySet="tblCustPaymentTerm">
+          <ScalarProperty Name="CustPaymentTermID" ColumnName="CustPaymentTermID" />
+          <ScalarProperty Name="CustPaymentTermCode" ColumnName="CustPaymentTermCode" />
+          <ScalarProperty Name="CustPaymentTermDescription" ColumnName="CustPaymentTermDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCustRoutes">
+      <EntityTypeMapping TypeName="masterModel.tblCustRoute">
+        <MappingFragment StoreEntitySet="tblCustRoute">
+          <ScalarProperty Name="CustRouteNumberID" ColumnName="CustRouteNumberID" />
+          <ScalarProperty Name="CustRouteNumber" ColumnName="CustRouteNumber" />
+          <ScalarProperty Name="CustRouteNumberDescription" ColumnName="CustRouteNumberDescription" />
+          <ScalarProperty Name="CustRouteUserAssignID" ColumnName="CustRouteUserAssignID" />
+          <ScalarProperty Name="CustRouteAssignFrom" ColumnName="CustRouteAssignFrom" />
+          <ScalarProperty Name="CustRouteAssignTo" ColumnName="CustRouteAssignTo" />
+          <ScalarProperty Name="CustRouteRep" ColumnName="CustRouteRep" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInvoiceHistories">
+      <EntityTypeMapping TypeName="masterModel.tblInvoiceHistory">
+        <MappingFragment StoreEntitySet="tblInvoiceHistory">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceStatus" ColumnName="InvoiceStatus" />
+          <ScalarProperty Name="InvoiceForCustomerNumber" ColumnName="InvoiceForCustomerNumber" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItems">
+      <EntityTypeMapping TypeName="masterModel.tblItem">
+        <MappingFragment StoreEntitySet="tblItem">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+          <ScalarProperty Name="ItemShortDescription" ColumnName="ItemShortDescription" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="ItemUPC" ColumnName="ItemUPC" />
+          <ScalarProperty Name="ItemShelfLife" ColumnName="ItemShelfLife" />
+          <ScalarProperty Name="ItemReturnAllowedFlag" ColumnName="ItemReturnAllowedFlag" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="ItemUnits" ColumnName="ItemUnits" />
+          <ScalarProperty Name="ItemWeights" ColumnName="ItemWeights" />
+          <ScalarProperty Name="ItemPriceGroup" ColumnName="ItemPriceGroup" />
+          <ScalarProperty Name="ItemProductGroup" ColumnName="ItemProductGroup" />
+          <ScalarProperty Name="ItemPromoGroup" ColumnName="ItemPromoGroup" />
+          <ScalarProperty Name="PrePrice" ColumnName="PrePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemPromoGroups">
+      <EntityTypeMapping TypeName="masterModel.tblItemPromoGroup">
+        <MappingFragment StoreEntitySet="tblItemPromoGroup">
+          <ScalarProperty Name="ItemPromoGroupID" ColumnName="ItemPromoGroupID" />
+          <ScalarProperty Name="ItemPromoGroupNumber" ColumnName="ItemPromoGroupNumber" />
+          <ScalarProperty Name="ItemPromoGroupDescription" ColumnName="ItemPromoGroupDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemTypes">
+      <EntityTypeMapping TypeName="masterModel.tblItemType">
+        <MappingFragment StoreEntitySet="tblItemType">
+          <ScalarProperty Name="ItemTypeID" ColumnName="ItemTypeID" />
+          <ScalarProperty Name="ItemTypeNumber" ColumnName="ItemTypeNumber" />
+          <ScalarProperty Name="ItemTypeDescription" ColumnName="ItemTypeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOrders">
+      <EntityTypeMapping TypeName="masterModel.tblOrder">
+        <MappingFragment StoreEntitySet="tblOrder">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderTrackingNumber" ColumnName="OrderTrackingNumber" />
+          <ScalarProperty Name="OrderRouteNumber" ColumnName="OrderRouteNumber" />
+          <ScalarProperty Name="OrderCustomerNumber" ColumnName="OrderCustomerNumber" />
+          <ScalarProperty Name="OrderGroupNumber" ColumnName="OrderGroupNumber" />
+          <ScalarProperty Name="OrderCaseNumbers" ColumnName="OrderCaseNumbers" />
+          <ScalarProperty Name="OrderItemNumber" ColumnName="OrderItemNumber" />
+          <ScalarProperty Name="OrderPromoNumber" ColumnName="OrderPromoNumber" />
+          <ScalarProperty Name="OrderItemQty" ColumnName="OrderItemQty" />
+          <ScalarProperty Name="ItemUnitPrice" ColumnName="ItemUnitPrice" />
+          <ScalarProperty Name="ItemTotalPrice" ColumnName="ItemTotalPrice" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TabletID" ColumnName="TabletID" />
+          <ScalarProperty Name="DataSyncDateTime" ColumnName="DataSyncDateTime" />
+          <ScalarProperty Name="OrderConfirmFlag" ColumnName="OrderConfirmFlag" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="PerPoundItemsWeight" ColumnName="PerPoundItemsWeight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOrderHistories">
+      <EntityTypeMapping TypeName="masterModel.tblOrderHistory">
+        <MappingFragment StoreEntitySet="tblOrderHistory">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderCustomerNumber" ColumnName="OrderCustomerNumber" />
+          <ScalarProperty Name="OrderItemNumber" ColumnName="OrderItemNumber" />
+          <ScalarProperty Name="OrderDate1" ColumnName="OrderDate1" />
+          <ScalarProperty Name="OrderItemQty1" ColumnName="OrderItemQty1" />
+          <ScalarProperty Name="OrderDate2" ColumnName="OrderDate2" />
+          <ScalarProperty Name="OrderItemQty2" ColumnName="OrderItemQty2" />
+          <ScalarProperty Name="OrderDate3" ColumnName="OrderDate3" />
+          <ScalarProperty Name="OrderItemQty3" ColumnName="OrderItemQty3" />
+          <ScalarProperty Name="OrderDate4" ColumnName="OrderDate4" />
+          <ScalarProperty Name="OrderItemQty4" ColumnName="OrderItemQty4" />
+          <ScalarProperty Name="OrderDate5" ColumnName="OrderDate5" />
+          <ScalarProperty Name="OrderItemQty5" ColumnName="OrderItemQty5" />
+          <ScalarProperty Name="OrderDate6" ColumnName="OrderDate6" />
+          <ScalarProperty Name="OrderItemQty6" ColumnName="OrderItemQty6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProductGroups">
+      <EntityTypeMapping TypeName="masterModel.tblProductGroup">
+        <MappingFragment StoreEntitySet="tblProductGroup">
+          <ScalarProperty Name="ItemProductGroupID" ColumnName="ItemProductGroupID" />
+          <ScalarProperty Name="ItemProductGroupNumber" ColumnName="ItemProductGroupNumber" />
+          <ScalarProperty Name="ItemProductGroupDescription" ColumnName="ItemProductGroupDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestionMasters">
+      <EntityTypeMapping TypeName="masterModel.tblQuestionMaster">
+        <MappingFragment StoreEntitySet="tblQuestionMaster">
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="QuestionDesc" ColumnName="QuestionDesc" />
+          <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+          <ScalarProperty Name="QuesType" ColumnName="QuesType" />
+          <ScalarProperty Name="ValidationType" ColumnName="ValidationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestionTypes">
+      <EntityTypeMapping TypeName="masterModel.tblQuestionType">
+        <MappingFragment StoreEntitySet="tblQuestionType">
+          <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+          <ScalarProperty Name="QuestionTypeDesc" ColumnName="QuestionTypeDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReturns">
+      <EntityTypeMapping TypeName="masterModel.tblReturn">
+        <MappingFragment StoreEntitySet="tblReturn">
+          <ScalarProperty Name="ReturnID" ColumnName="ReturnID" />
+          <ScalarProperty Name="ReturnGroupNumber" ColumnName="ReturnGroupNumber" />
+          <ScalarProperty Name="ReturnCaseNumbers" ColumnName="ReturnCaseNumbers" />
+          <ScalarProperty Name="ReturnItemNumber" ColumnName="ReturnItemNumber" />
+          <ScalarProperty Name="ReturnPromoNumber" ColumnName="ReturnPromoNumber" />
+          <ScalarProperty Name="ReturnItemWeight" ColumnName="ReturnItemWeight" />
+          <ScalarProperty Name="ReturnItemUnits" ColumnName="ReturnItemUnits" />
+          <ScalarProperty Name="ItemUnitPrice" ColumnName="ItemUnitPrice" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="ItemTotalPrice" ColumnName="ItemTotalPrice" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TabletID" ColumnName="TabletID" />
+          <ScalarProperty Name="DataSyncDateTime" ColumnName="DataSyncDateTime" />
+          <ScalarProperty Name="OrderConfirmFlag" ColumnName="OrderConfirmFlag" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReturnTypes">
+      <EntityTypeMapping TypeName="masterModel.tblReturnType">
+        <MappingFragment StoreEntitySet="tblReturnTypes">
+          <ScalarProperty Name="ReturnTypeID" ColumnName="ReturnTypeID" />
+          <ScalarProperty Name="ReturnTypeCode" ColumnName="ReturnTypeCode" />
+          <ScalarProperty Name="ReturnTypeDescription" ColumnName="ReturnTypeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStates">
+      <EntityTypeMapping TypeName="masterModel.tblState">
+        <MappingFragment StoreEntitySet="tblState">
+          <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+          <ScalarProperty Name="State_Abbr" ColumnName="State_Abbr" />
+          <ScalarProperty Name="State_Description" ColumnName="State_Description" />
+          <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTropicalUsers">
+      <EntityTypeMapping TypeName="masterModel.tblTropicalUser">
+        <MappingFragment StoreEntitySet="tblTropicalUser">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="UserRouteNumber" ColumnName="UserRouteNumber" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTropicalUserRoles">
+      <EntityTypeMapping TypeName="masterModel.tblTropicalUserRole">
+        <MappingFragment StoreEntitySet="tblTropicalUserRole">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="RoleCreatedBy" ColumnName="RoleCreatedBy" />
+          <ScalarProperty Name="RoleCreatedDate" ColumnName="RoleCreatedDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Details">
+      <EntityTypeMapping TypeName="masterModel.User_Details">
+        <MappingFragment StoreEntitySet="User_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="masterModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSreplication_options">
+      <EntityTypeMapping TypeName="masterModel.MSreplication_options">
+        <MappingFragment StoreEntitySet="MSreplication_options">
+          <ScalarProperty Name="optname" ColumnName="optname" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="major_version" ColumnName="major_version" />
+          <ScalarProperty Name="minor_version" ColumnName="minor_version" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="install_failures" ColumnName="install_failures" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_db">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_db">
+        <MappingFragment StoreEntitySet="spt_fallback_db">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_dbid" ColumnName="xfallback_dbid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dbid" ColumnName="dbid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_dev">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_dev">
+        <MappingFragment StoreEntitySet="spt_fallback_dev">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_low" ColumnName="xfallback_low" />
+          <ScalarProperty Name="xfallback_drive" ColumnName="xfallback_drive" />
+          <ScalarProperty Name="low" ColumnName="low" />
+          <ScalarProperty Name="high" ColumnName="high" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phyname" ColumnName="phyname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_usg">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_usg">
+        <MappingFragment StoreEntitySet="spt_fallback_usg">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_vstart" ColumnName="xfallback_vstart" />
+          <ScalarProperty Name="dbid" ColumnName="dbid" />
+          <ScalarProperty Name="segmap" ColumnName="segmap" />
+          <ScalarProperty Name="lstart" ColumnName="lstart" />
+          <ScalarProperty Name="sizepg" ColumnName="sizepg" />
+          <ScalarProperty Name="vstart" ColumnName="vstart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_monitor">
+      <EntityTypeMapping TypeName="masterModel.spt_monitor">
+        <MappingFragment StoreEntitySet="spt_monitor">
+          <ScalarProperty Name="lastrun" ColumnName="lastrun" />
+          <ScalarProperty Name="cpu_busy" ColumnName="cpu_busy" />
+          <ScalarProperty Name="io_busy" ColumnName="io_busy" />
+          <ScalarProperty Name="idle" ColumnName="idle" />
+          <ScalarProperty Name="pack_received" ColumnName="pack_received" />
+          <ScalarProperty Name="pack_sent" ColumnName="pack_sent" />
+          <ScalarProperty Name="connections" ColumnName="connections" />
+          <ScalarProperty Name="pack_errors" ColumnName="pack_errors" />
+          <ScalarProperty Name="total_read" ColumnName="total_read" />
+          <ScalarProperty Name="total_write" ColumnName="total_write" />
+          <ScalarProperty Name="total_errors" ColumnName="total_errors" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCollections">
+      <EntityTypeMapping TypeName="masterModel.tblCollection">
+        <MappingFragment StoreEntitySet="tblCollection">
+          <ScalarProperty Name="CollectionID" ColumnName="CollectionID" />
+          <ScalarProperty Name="CollectionDate" ColumnName="CollectionDate" />
+          <ScalarProperty Name="CollectionAmount" ColumnName="CollectionAmount" />
+          <ScalarProperty Name="CollectionCheckNumber" ColumnName="CollectionCheckNumber" />
+          <ScalarProperty Name="CollectionCashYesNo" ColumnName="CollectionCashYesNo" />
+          <ScalarProperty Name="CollectionForCustomerNumber" ColumnName="CollectionForCustomerNumber" />
+          <ScalarProperty Name="OrderConfirmFlag" ColumnName="OrderConfirmFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCustPaymentTypes">
+      <EntityTypeMapping TypeName="masterModel.tblCustPaymentType">
+        <MappingFragment StoreEntitySet="tblCustPaymentType">
+          <ScalarProperty Name="CustPaymentTypeID" ColumnName="CustPaymentTypeID" />
+          <ScalarProperty Name="CustPaymentTypeNumber" ColumnName="CustPaymentTypeNumber" />
+          <ScalarProperty Name="CustPaymentTypeDescription" ColumnName="CustPaymentTypeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMesssages">
+      <EntityTypeMapping TypeName="masterModel.tblMesssage">
+        <MappingFragment StoreEntitySet="tblMesssage">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="MessageDescription" ColumnName="MessageDescription" />
+          <ScalarProperty Name="MessageAssignRouteNumber" ColumnName="MessageAssignRouteNumber" />
+          <ScalarProperty Name="MessageAllFlag" ColumnName="MessageAllFlag" />
+          <ScalarProperty Name="MessageAssignUserID" ColumnName="MessageAssignUserID" />
+          <ScalarProperty Name="MessageDateAndTime" ColumnName="MessageDateAndTime" />
+          <ScalarProperty Name="MessageCreatedByUser" ColumnName="MessageCreatedByUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPriceGroups">
+      <EntityTypeMapping TypeName="masterModel.tblPriceGroup">
+        <MappingFragment StoreEntitySet="tblPriceGroup">
+          <ScalarProperty Name="PriceGroupID" ColumnName="PriceGroupID" />
+          <ScalarProperty Name="PriceGroupNumber" ColumnName="PriceGroupNumber" />
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+          <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="EffectivePrice" ColumnName="EffectivePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserLogins">
+      <EntityTypeMapping TypeName="masterModel.tblUserLogin">
+        <MappingFragment StoreEntitySet="tblUserLogin">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

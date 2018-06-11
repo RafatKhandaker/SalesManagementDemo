@@ -90,18 +90,6 @@
     <Property Name="PassWord" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="RoleId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Sales__BudgetId__72C60C4A">
-    <End Role="Budget" Type="Self.Budget" Multiplicity="1" />
-    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Budget">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Sales">
-        <PropertyRef Name="BudgetId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_BudgetId_DeptID">
     <End Role="Budget" Type="Self.Budget" Multiplicity="1" />
     <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
@@ -123,6 +111,30 @@
       </Principal>
       <Dependent Role="Budget">
         <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrdersId">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="OrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductId">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -162,6 +174,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Details">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserId_Sales">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="SalesManagementDemoModelStoreContainer">
     <EntitySet Name="Budget" EntityType="Self.Budget" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
@@ -173,10 +209,6 @@
     <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_Details" EntityType="Self.User_Details" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Sales__BudgetId__72C60C4A" Association="Self.FK__Sales__BudgetId__72C60C4A">
-      <End Role="Budget" EntitySet="Budget" />
-      <End Role="Sales" EntitySet="Sales" />
-    </AssociationSet>
     <AssociationSet Name="FK_BudgetId_DeptID" Association="Self.FK_BudgetId_DeptID">
       <End Role="Budget" EntitySet="Budget" />
       <End Role="Sales" EntitySet="Sales" />
@@ -184,6 +216,14 @@
     <AssociationSet Name="FK_DepartmentId" Association="Self.FK_DepartmentId">
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Budget" EntitySet="Budget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrdersId" Association="Self.FK_OrdersId">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductId" Association="Self.FK_ProductId">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK_ProductId_Inv" Association="Self.FK_ProductId_Inv">
       <End Role="Products" EntitySet="Products" />
@@ -196,6 +236,14 @@
     <AssociationSet Name="FK_TransId" Association="Self.FK_TransId">
       <End Role="Order_Details" EntitySet="Order_Details" />
       <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserId" Association="Self.FK_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Details" EntitySet="User_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserId_Sales" Association="Self.FK_UserId_Sales">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Sales" EntitySet="Sales" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
