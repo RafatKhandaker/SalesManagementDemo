@@ -231,6 +231,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin\admin.css" />
     <Content Include="Content\Admin\float-chart.css" />
     <Content Include="Content\Admin\style.min.css" />
     <Content Include="Content\bootstrap.css" />
