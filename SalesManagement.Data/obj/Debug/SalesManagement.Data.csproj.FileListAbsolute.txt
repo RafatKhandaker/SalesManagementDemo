@@ -8,13 +8,3 @@ c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\Sales
 c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.csprojResolveAssemblyReference.cache
 c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.dll
 c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.pdb
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\SalesManagement.Data.dll.config
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\SalesManagement.Data.dll
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\SalesManagement.Data.pdb
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.dll
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.SqlServer.dll
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.xml
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\obj\Debug\SalesManagement.Data.csprojResolveAssemblyReference.cache
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\obj\Debug\SalesManagement.Data.dll
-C:\GitProjects\SalesManagementDemo\SalesManagement.Data\obj\Debug\SalesManagement.Data.pdb

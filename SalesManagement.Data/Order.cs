@@ -25,6 +25,7 @@ namespace SalesManagement.Data
         public int Quantity { get; set; }
         public System.Guid TransactionId { get; set; }
         public decimal TotalCost { get; set; }
+        public System.DateTime OrderDate { get; set; }
     
         public virtual Order_Details Order_Details { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

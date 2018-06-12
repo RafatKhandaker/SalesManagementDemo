@@ -2,6 +2,8 @@ using System;
 using Unity;
 using SalesManagement.BLL.Contracts;
 using SalesManagement.BLL;
+using System.Web.Mvc;
+using Unity.AspNet.Mvc;
 
 namespace SalesManagement.UI
 {
@@ -45,6 +47,20 @@ namespace SalesManagement.UI
             // container.RegisterType<IProductRepository, ProductRepository>();
 
             container.RegisterType<IDBService, DataService>();
+        }
+
+        public static void RegisterComponents()
+        {
+            var container = new UnityContainer();
+
+            // register all your components with the container here 
+            // it is NOT necessary to register your controllers 
+
+            // e.g. container.RegisterType<ITestService, TestService>(); 
+
+            container.RegisterType<IDBService, DataService>();
+
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
 }

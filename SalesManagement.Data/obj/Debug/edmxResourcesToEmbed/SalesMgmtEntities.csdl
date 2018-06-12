@@ -30,30 +30,6 @@
     <Property Name="InStock" Type="Int32" />
     <NavigationProperty Name="Product" Relationship="Self.FK_ProductId_Inv" FromRole="Inventory" ToRole="Products" />
   </EntityType>
-  <EntityType Name="Order_Details">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Guid" Nullable="false" />
-    <Property Name="CustomerFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="CustomerLastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="AccountType" Type="Int32" Nullable="false" />
-    <Property Name="DeliveryAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TotalCost" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK_TransId" FromRole="Order_Details" ToRole="Orders" />
-  </EntityType>
-  <EntityType Name="Order">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProductId" Type="Int32" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="TransactionId" Type="Guid" Nullable="false" />
-    <NavigationProperty Name="Order_Details" Relationship="Self.FK_TransId" FromRole="Orders" ToRole="Order_Details" />
-    <NavigationProperty Name="Sales" Relationship="SalesManagementDemoModel.FK_OrdersId" FromRole="Order" ToRole="Sale" />
-    <NavigationProperty Name="Product" Relationship="SalesManagementDemoModel.FK_ProductId" FromRole="Order" ToRole="Product" />
-  </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="Id" />
@@ -82,8 +58,8 @@
     <Property Name="BudgetId" Type="Int32" Nullable="false" />
     <Property Name="UserId" Type="Int32" />
     <NavigationProperty Name="Budget" Relationship="Self.FK__Sales__BudgetId__72C60C4A" FromRole="Sales" ToRole="Budget" />
-    <NavigationProperty Name="Order" Relationship="SalesManagementDemoModel.FK_OrdersId" FromRole="Sale" ToRole="Order" />
     <NavigationProperty Name="User" Relationship="SalesManagementDemoModel.FK_UserId_Sales" FromRole="Sale" ToRole="User" />
+    <NavigationProperty Name="Order" Relationship="SalesManagementDemoModel.FK_OrdersId" FromRole="Sale" ToRole="Order" />
   </EntityType>
   <EntityType Name="User_Details">
     <Key>
@@ -144,18 +120,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TransId">
-    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="1" />
-    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order_Details">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Orders">
-        <PropertyRef Name="TransactionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_RoleId">
     <End Role="Roles" Type="Self.Role" Multiplicity="1" />
     <End Role="Users" Type="Self.User" Multiplicity="*" />
@@ -172,8 +136,6 @@
     <EntitySet Name="Budgets" EntityType="Self.Budget" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="Inventories" EntityType="Self.Inventory" />
-    <EntitySet Name="Order_Details" EntityType="Self.Order_Details" />
-    <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="Sales" EntityType="Self.Sale" />
@@ -191,21 +153,9 @@
       <End Role="Products" EntitySet="Products" />
       <End Role="Inventory" EntitySet="Inventories" />
     </AssociationSet>
-    <AssociationSet Name="FK_TransId" Association="Self.FK_TransId">
-      <End Role="Order_Details" EntitySet="Order_Details" />
-      <End Role="Orders" EntitySet="Orders" />
-    </AssociationSet>
     <AssociationSet Name="FK_RoleId" Association="Self.FK_RoleId">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OrdersId" Association="SalesManagementDemoModel.FK_OrdersId">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="Sale" EntitySet="Sales" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProductId" Association="SalesManagementDemoModel.FK_ProductId">
-      <End Role="Product" EntitySet="Products" />
-      <End Role="Order" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK_UserId" Association="SalesManagementDemoModel.FK_UserId">
       <End Role="User" EntitySet="Users" />
@@ -215,31 +165,21 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Sale" EntitySet="Sales" />
     </AssociationSet>
+    <EntitySet Name="Order_Details" EntityType="SalesManagementDemoModel.Order_Details" />
+    <EntitySet Name="Orders" EntityType="SalesManagementDemoModel.Order" />
+    <AssociationSet Name="FK_TransId" Association="SalesManagementDemoModel.FK_TransId">
+      <End Role="Order_Details" EntitySet="Order_Details" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrdersId" Association="SalesManagementDemoModel.FK_OrdersId">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductId" Association="SalesManagementDemoModel.FK_ProductId">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
   </EntityContainer>
-  <Association Name="FK_OrdersId">
-    <End Type="SalesManagementDemoModel.Order" Role="Order" Multiplicity="0..1" />
-    <End Type="SalesManagementDemoModel.Sale" Role="Sale" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Sale">
-        <PropertyRef Name="OrdersId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProductId">
-    <End Type="SalesManagementDemoModel.Product" Role="Product" Multiplicity="1" />
-    <End Type="SalesManagementDemoModel.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="ProductId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_UserId">
     <End Type="SalesManagementDemoModel.User" Role="User" Multiplicity="1" />
     <End Type="SalesManagementDemoModel.User_Details" Role="User_Details" Multiplicity="*" />
@@ -261,6 +201,67 @@
       </Principal>
       <Dependent Role="Sale">
         <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Order_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CustomerFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerLastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AccountType" Type="Int32" Nullable="false" />
+    <Property Name="DeliveryAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="SalesManagementDemoModel.FK_TransId" FromRole="Order_Details" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="TransactionId" Type="Guid" Nullable="false" />
+    <Property Name="TotalCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Order_Details" Relationship="SalesManagementDemoModel.FK_TransId" FromRole="Order" ToRole="Order_Details" />
+    <NavigationProperty Name="Sales" Relationship="SalesManagementDemoModel.FK_OrdersId" FromRole="Order" ToRole="Sale" />
+    <NavigationProperty Name="Product" Relationship="SalesManagementDemoModel.FK_ProductId" FromRole="Order" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_TransId">
+    <End Type="SalesManagementDemoModel.Order_Details" Role="Order_Details" Multiplicity="1" />
+    <End Type="SalesManagementDemoModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="TransactionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrdersId">
+    <End Type="SalesManagementDemoModel.Order" Role="Order" Multiplicity="0..1" />
+    <End Type="SalesManagementDemoModel.Sale" Role="Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="OrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductId">
+    <End Type="SalesManagementDemoModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="SalesManagementDemoModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

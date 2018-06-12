@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -58,12 +58,13 @@
       <Project>{6b11d317-ef80-4f93-b990-502f8b872119}</Project>
       <Name>SalesManagement.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SalesManagement.Model\SalesManagement.Model.csproj">
-      <Project>{44d1bdbe-9a55-4001-a2a1-4168a7712124}</Project>
-      <Name>SalesManagement.Model</Name>
+    <ProjectReference Include="..\SalesManagement.Models\SalesManagement.Models.csproj">
+      <Project>{528e6c3b-117d-426f-b9dc-685fd2ea4f95}</Project>
+      <Name>SalesManagement.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

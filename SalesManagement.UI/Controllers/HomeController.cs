@@ -1,4 +1,5 @@
-﻿using SalesManagement.BLL.Contracts;
+﻿using SalesManagement.BLL;
+using SalesManagement.BLL.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,19 @@ namespace SalesManagement.UI.Controllers
 
     public class HomeController : Controller
     {
-        private IDBService dbService;
-        private bool isAdmin;
+        bool isAdmin;
+
+        private readonly IDBService _DBService;
+
+        
+        public HomeController
+        (
+            IDBService _DBService
+        )
+        {
+            this._DBService = _DBService;
+        }
+
 
         [HttpGet]
         public ActionResult Index()
@@ -38,11 +50,8 @@ namespace SalesManagement.UI.Controllers
         [HttpGet]
         public ActionResult Transactions()
         {
-            var user = 1;
             isAdmin = true;
-            //  return (isAdmin)? View( dbService.RetrieveAllTransactions()) : View ( dbService.RetrieveUserTransactions( user ));
-
-            return View();
+            return (isAdmin)? View(_DBService.RetrieveAllTransactions() ) : View(_DBService.RetrieveUserTransactions(0));
         }
     }
 }

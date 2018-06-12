@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SalesManagement.Model;
+using SalesManagement.Models;
 using SalesManagement.Data;
 
 namespace SalesManagement.BLL
@@ -25,6 +25,7 @@ namespace SalesManagement.BLL
                             O.Order_Details.CustomerFirstName,
                             O.Order_Details.CustomerLastName,
                             O.Product.Name,
+                            O.OrderDate,
                             O.Order_Details.DeliveryAddress,
                             O.Order_Details.AccountType.ToString(),
                             O.Quantity,
@@ -52,6 +53,7 @@ namespace SalesManagement.BLL
                             S.Order.Order_Details.CustomerFirstName,
                             S.Order.Order_Details.CustomerLastName,
                             S.Order.Product.Name,
+                            S.Order.OrderDate,
                             S.Order.Order_Details.DeliveryAddress,
                             S.Order.Order_Details.AccountType.ToString(),
                             S.Order.Quantity,

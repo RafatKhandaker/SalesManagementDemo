@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SalesManagement.Data;
-using SalesManagement.Model;
+using SalesManagement.Models;
 
 namespace SalesManagement.BLL.Contracts
 {
