@@ -1,0 +1,65 @@
+﻿@using System.Web.UI.WebControls
+@using SalesManagement.Model
+
+@model SalesManagement.Model.Transaction
+
+@{
+    ViewBag.Title = "PaymentForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Place a New Order</h2>
+@using (Html.BeginForm("PaymentForm", "Account", FormMethod.Post, new { @class = "" }))
+{
+@Html.AntiForgeryToken()
+
+<div class="form-group">
+    @Html.Label("First Name")
+    @Html.TextBoxFor(m => m.CustFName, new { @id= "FirstName"})
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+<div class="form-group">
+    @Html.Label("Last Name")
+    @Html.TextBoxFor(m => m.CustLName, new { @id = "LastName" })
+</div>
+<div class="form-group">
+    @Html.Label("Address")
+    @Html.TextBoxFor(m => m.DeliveryAddress, new { @id = "Address" })
+</div>
+<div class="form-group">
+    @Html.Label("Account")
+    @Html.DropDownListFor(m => m.AccountType, new SelectList(new List<ListItem>
+        {
+            new ListItem { Text = "1", Value = "1" },
+            new ListItem { Text = "2", Value = "2" },
+            new ListItem { Text = "3", Value = "3" },
+            new ListItem { Text = "4", Value = "4" },
+            new ListItem { Text = "5", Value = "5" }
+        }
+       ))
+</div>
+<div class="form-group">
+    @Html.Label("Quantity")
+    @Html.DropDownListFor(
+        m => m.Quantity, new SelectList(new List<ListItem>
+        {
+            new ListItem { Text = "1", Value = "1" },
+            new ListItem { Text = "2", Value = "2" },
+            new ListItem { Text = "3", Value = "3" },
+            new ListItem { Text = "4", Value = "4" },
+            new ListItem { Text = "5", Value = "5" },
+            new ListItem { Text = "6", Value = "6" },
+            new ListItem { Text = "7", Value = "7" },
+            new ListItem { Text = "8", Value = "8" },
+            new ListItem { Text = "9", Value = "9" },
+            new ListItem { Text = "10", Value = "10" }
+        }
+         )
+    )
+</div>
+<div class="form-check">
+    @Html.Label("Confirm Order")
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+}

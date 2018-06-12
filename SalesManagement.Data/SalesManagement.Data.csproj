@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountType.cs">
+      <DependentUpon>SalesMgmtEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Budget.cs">
       <DependentUpon>SalesMgmtEntities.tt</DependentUpon>
     </Compile>

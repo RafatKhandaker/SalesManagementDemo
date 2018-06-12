@@ -28,12 +28,13 @@ namespace SalesManagement.Data
         public virtual DbSet<Budget> Budgets { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
-        public virtual DbSet<Order_Details> Order_Details { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<User_Details> User_Details { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<AccountType> AccountTypes { get; set; }
+        public virtual DbSet<Order_Details> Order_Details { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
     }
 }

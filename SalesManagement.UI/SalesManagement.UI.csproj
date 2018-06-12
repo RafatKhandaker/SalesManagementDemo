@@ -80,6 +80,11 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +134,22 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.0\lib\net45\Unity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.5\lib\net45\Unity.Container.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Mvc, Version=5.0.13.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.5.0.13\lib\net45\Unity.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -195,9 +216,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,12 +231,42 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin\float-chart.css" />
+    <Content Include="Content\Admin\style.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Admin\chart-page-init.js" />
+    <Content Include="Scripts\Admin\custom.min.js" />
+    <Content Include="Scripts\Admin\excanvas.js" />
+    <Content Include="Scripts\Admin\excanvas.min.js" />
+    <Content Include="Scripts\Admin\jquery.colorhelpers.js" />
+    <Content Include="Scripts\Admin\jquery.flot.canvas.js" />
+    <Content Include="Scripts\Admin\jquery.flot.categories.js" />
+    <Content Include="Scripts\Admin\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\Admin\jquery.flot.errorbars.js" />
+    <Content Include="Scripts\Admin\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\Admin\jquery.flot.image.js" />
+    <Content Include="Scripts\Admin\jquery.flot.js" />
+    <Content Include="Scripts\Admin\jquery.flot.navigate.js" />
+    <Content Include="Scripts\Admin\jquery.flot.pie.js" />
+    <Content Include="Scripts\Admin\jquery.flot.resize.js" />
+    <Content Include="Scripts\Admin\jquery.flot.selection.js" />
+    <Content Include="Scripts\Admin\jquery.flot.stack.js" />
+    <Content Include="Scripts\Admin\jquery.flot.symbol.js" />
+    <Content Include="Scripts\Admin\jquery.flot.threshold.js" />
+    <Content Include="Scripts\Admin\jquery.flot.time.js" />
+    <Content Include="Scripts\Admin\jquery.flot.tooltip.min.js" />
+    <Content Include="Scripts\Admin\jquery.js" />
+    <Content Include="Scripts\Admin\jquery.min.js" />
+    <Content Include="Scripts\Admin\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Scripts\Admin\popper.min.js" />
+    <Content Include="Scripts\Admin\sidebarmenu.js" />
+    <Content Include="Scripts\Admin\sparkline.js" />
+    <Content Include="Scripts\Admin\waves.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -247,26 +300,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\Transactions.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Account\PaymentForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -278,6 +316,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalesManagement.BLL\SalesManagement.BLL.csproj">
+      <Project>{496dc2a5-935d-46e7-8164-99d90fc16422}</Project>
+      <Name>SalesManagement.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesManagement.Data\SalesManagement.Data.csproj">
+      <Project>{6B11D317-EF80-4F93-B990-502F8B872119}</Project>
+      <Name>SalesManagement.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesManagement.Models\SalesManagement.Models.csproj">
+      <Project>{528e6c3b-117d-426f-b9dc-685fd2ea4f95}</Project>
+      <Name>SalesManagement.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

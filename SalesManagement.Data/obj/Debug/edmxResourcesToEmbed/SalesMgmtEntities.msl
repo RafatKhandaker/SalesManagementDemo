@@ -30,28 +30,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Order_Details">
-      <EntityTypeMapping TypeName="SalesManagementDemoModel.Order_Details">
-        <MappingFragment StoreEntitySet="Order_Details">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
-          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
-          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
-          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="SalesManagementDemoModel.Order">
-        <MappingFragment StoreEntitySet="Orders">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="SalesManagementDemoModel.Product">
         <MappingFragment StoreEntitySet="Products">
@@ -98,6 +76,38 @@
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="PassWord" ColumnName="PassWord" />
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SalesManagementDemoModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountTypes">
+      <EntityTypeMapping TypeName="SalesManagementDemoModel.AccountType">
+        <MappingFragment StoreEntitySet="AccountTypes">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Details">
+      <EntityTypeMapping TypeName="SalesManagementDemoModel.Order_Details">
+        <MappingFragment StoreEntitySet="Order_Details">
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
