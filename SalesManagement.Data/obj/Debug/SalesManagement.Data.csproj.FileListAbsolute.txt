@@ -8,3 +8,12 @@ c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\Sales
 c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.csprojResolveAssemblyReference.cache
 c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.dll
 c:\users\sysadmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Data\obj\Debug\SalesManagement.Data.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\SalesManagement.Data.dll.config
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\SalesManagement.Data.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\SalesManagement.Data.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.xml
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\obj\Debug\SalesManagement.Data.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Data\obj\Debug\SalesManagement.Data.pdb

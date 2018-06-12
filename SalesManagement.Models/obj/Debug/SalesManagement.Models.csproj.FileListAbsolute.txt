@@ -3,3 +3,7 @@ C:\Users\SysAdmin\documents\visual studio 2015\Projects\SalesManagement.UI\Sales
 C:\Users\SysAdmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Models\obj\Debug\SalesManagement.Models.csprojResolveAssemblyReference.cache
 C:\Users\SysAdmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Models\obj\Debug\SalesManagement.Models.dll
 C:\Users\SysAdmin\documents\visual studio 2015\Projects\SalesManagement.UI\SalesManagement.Models\obj\Debug\SalesManagement.Models.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\bin\Debug\SalesManagement.Models.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\bin\Debug\SalesManagement.Models.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\obj\Debug\SalesManagement.Models.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\obj\Debug\SalesManagement.Models.pdb
