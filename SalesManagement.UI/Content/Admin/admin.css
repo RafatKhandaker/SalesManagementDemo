@@ -1,6 +1,6 @@
 ﻿body {
 }
 
-.left-container {
-    float: left;
+.page-wrapper {
+    margin-left: unset;
 }

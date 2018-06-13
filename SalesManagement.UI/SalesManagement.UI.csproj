@@ -244,6 +244,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\Admin\chart-page-init.js" />
+    <Content Include="Scripts\Admin\chart.js" />
     <Content Include="Scripts\Admin\custom.min.js" />
     <Content Include="Scripts\Admin\excanvas.js" />
     <Content Include="Scripts\Admin\excanvas.min.js" />
@@ -255,9 +256,12 @@
     <Content Include="Scripts\Admin\jquery.flot.fillbetween.js" />
     <Content Include="Scripts\Admin\jquery.flot.image.js" />
     <Content Include="Scripts\Admin\jquery.flot.js" />
+    <Content Include="Scripts\Admin\jquery.flot.min.js" />
     <Content Include="Scripts\Admin\jquery.flot.navigate.js" />
     <Content Include="Scripts\Admin\jquery.flot.pie.js" />
+    <Content Include="Scripts\Admin\jquery.flot.pie.min.js" />
     <Content Include="Scripts\Admin\jquery.flot.resize.js" />
+    <Content Include="Scripts\Admin\jquery.flot.resize.min.js" />
     <Content Include="Scripts\Admin\jquery.flot.selection.js" />
     <Content Include="Scripts\Admin\jquery.flot.stack.js" />
     <Content Include="Scripts\Admin\jquery.flot.symbol.js" />
@@ -266,10 +270,16 @@
     <Content Include="Scripts\Admin\jquery.flot.tooltip.min.js" />
     <Content Include="Scripts\Admin\jquery.js" />
     <Content Include="Scripts\Admin\jquery.min.js" />
+    <Content Include="Scripts\Admin\jquery.peity.min.js" />
+    <Content Include="Scripts\Admin\jquery.ui.custom.js" />
+    <Content Include="Scripts\Admin\matrix.charts.js" />
+    <Content Include="Scripts\Admin\matrix.dashboard.js" />
+    <Content Include="Scripts\Admin\matrix.interface.js" />
     <Content Include="Scripts\Admin\perfect-scrollbar.jquery.min.js" />
     <Content Include="Scripts\Admin\popper.min.js" />
     <Content Include="Scripts\Admin\sidebarmenu.js" />
     <Content Include="Scripts\Admin\sparkline.js" />
+    <Content Include="Scripts\Admin\turning-series.js" />
     <Content Include="Scripts\Admin\waves.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
