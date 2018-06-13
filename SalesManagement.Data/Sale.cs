@@ -16,7 +16,6 @@ namespace SalesManagement.Data
     {
         public int Id { get; set; }
         public Nullable<int> OrdersId { get; set; }
-        public Nullable<int> InventoryId { get; set; }
         public int BudgetId { get; set; }
         public Nullable<int> UserId { get; set; }
     

@@ -1,15 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SalesManagementDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="Budget">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DepartmentId" Type="int" Nullable="false" />
-    <Property Name="Amounted" Type="money" />
     <Property Name="Gains" Type="money" />
     <Property Name="Loss" Type="money" />
-    <Property Name="MonthlyReportDate" Type="date" />
+    <Property Name="budget" Type="money" />
+    <Property Name="TimeStamped" Type="datetime" Nullable="false" />
+    <Property Name="Amounted" Type="money" />
   </EntityType>
   <EntityType Name="Departments">
     <Key>
@@ -35,7 +43,7 @@
     <Property Name="CustomerLastName" Type="varchar" MaxLength="20" />
     <Property Name="AccountType" Type="int" Nullable="false" />
     <Property Name="DeliveryAddress" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="TotalCost" Type="money" />
+    <Property Name="AccountNumber" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
@@ -45,6 +53,8 @@
     <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="Quantity" Type="int" Nullable="false" />
     <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TotalCost" Type="money" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -53,6 +63,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cost" Type="money" />
+    <Property Name="ProfitRate" Type="money" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
@@ -67,7 +78,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrdersId" Type="int" />
-    <Property Name="InventoryId" Type="int" />
     <Property Name="BudgetId" Type="int" Nullable="false" />
     <Property Name="UserId" Type="int" />
   </EntityType>
@@ -90,15 +100,15 @@
     <Property Name="PassWord" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="RoleId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Sales__BudgetId__72C60C4A">
-    <End Role="Budget" Type="Self.Budget" Multiplicity="1" />
-    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+  <Association Name="FK_AccountType">
+    <End Role="AccountTypes" Type="Self.AccountTypes" Multiplicity="1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Budget">
+      <Principal Role="AccountTypes">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Sales">
-        <PropertyRef Name="BudgetId" />
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="AccountType" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -123,6 +133,30 @@
       </Principal>
       <Dependent Role="Budget">
         <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrdersId">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="OrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductId">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -162,7 +196,32 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Details">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserId_Sales">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="SalesManagementDemoModelStoreContainer">
+    <EntitySet Name="AccountTypes" EntityType="Self.AccountTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Budget" EntityType="Self.Budget" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
@@ -173,9 +232,9 @@
     <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_Details" EntityType="Self.User_Details" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Sales__BudgetId__72C60C4A" Association="Self.FK__Sales__BudgetId__72C60C4A">
-      <End Role="Budget" EntitySet="Budget" />
-      <End Role="Sales" EntitySet="Sales" />
+    <AssociationSet Name="FK_AccountType" Association="Self.FK_AccountType">
+      <End Role="AccountTypes" EntitySet="AccountTypes" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
     </AssociationSet>
     <AssociationSet Name="FK_BudgetId_DeptID" Association="Self.FK_BudgetId_DeptID">
       <End Role="Budget" EntitySet="Budget" />
@@ -184,6 +243,14 @@
     <AssociationSet Name="FK_DepartmentId" Association="Self.FK_DepartmentId">
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Budget" EntitySet="Budget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrdersId" Association="Self.FK_OrdersId">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductId" Association="Self.FK_ProductId">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK_ProductId_Inv" Association="Self.FK_ProductId_Inv">
       <End Role="Products" EntitySet="Products" />
@@ -196,6 +263,14 @@
     <AssociationSet Name="FK_TransId" Association="Self.FK_TransId">
       <End Role="Order_Details" EntitySet="Order_Details" />
       <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserId" Association="Self.FK_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Details" EntitySet="User_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserId_Sales" Association="Self.FK_UserId_Sales">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Sales" EntitySet="Sales" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
