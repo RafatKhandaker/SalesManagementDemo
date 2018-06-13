@@ -43,6 +43,7 @@ namespace SalesManagement.UI.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult PaymentForm( Transaction newTransaction )
         {
             _DBService.SaveTransactionWorkFlow( newTransaction );
