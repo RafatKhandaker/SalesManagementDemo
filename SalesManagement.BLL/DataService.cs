@@ -130,7 +130,7 @@ namespace SalesManagement.BLL
                 form.TotalCost = (decimal) dbContext.Products.Where(w => w.Id == pId ).Select(s => s.Cost)?.FirstOrDefault();
             }
 
-            return form;
+                return form;
                 
         }
 

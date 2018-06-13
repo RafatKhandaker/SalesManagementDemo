@@ -28,8 +28,8 @@ namespace SalesManagement.Data
         public System.DateTime OrderDate { get; set; }
     
         public virtual Order_Details Order_Details { get; set; }
-        public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sale> Sales { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

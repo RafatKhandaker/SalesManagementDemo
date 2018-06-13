@@ -22,14 +22,14 @@ namespace SalesManagement.Data
     
         public int Id { get; set; }
         public int DepartmentId { get; set; }
-        public Nullable<decimal> Amounted { get; set; }
         public Nullable<decimal> Gains { get; set; }
         public Nullable<decimal> Loss { get; set; }
         public Nullable<decimal> budget1 { get; set; }
         public System.DateTime TimeStamped { get; set; }
+        public Nullable<decimal> Amounted { get; set; }
     
-        public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sale> Sales { get; set; }
+        public virtual Department Department { get; set; }
     }
 }
