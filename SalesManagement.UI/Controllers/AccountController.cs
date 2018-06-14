@@ -50,7 +50,10 @@ namespace SalesManagement.UI.Controllers
             _DBService.SaveTransactionWorkFlow( newTransaction );
             _DBService.UpdateSalesRecord("admin@gmail.com");
 
-            return View();
+            return PaymentSuccess();
         }
+
+        [HttpGet]
+        public ActionResult PaymentSuccess() { return View(); }
     }
 }

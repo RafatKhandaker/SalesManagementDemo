@@ -63,6 +63,11 @@
             @Html.Label("Confirm Order")
             @Html.CheckBox("Confirm Order")
         </div>
+
+        @Html.TextBoxFor(m => m.Product, new { @text = Model.Product, @value = Model.Product, @style = "display: none" })
+        @Html.TextBoxFor(m => m.TotalCost, new { @text = Model.TotalCost, @value = Model.TotalCost, @style = "display: none" })
+        @Html.TextBoxFor(m => m.Id, new { @text = Model.Id, @value = Model.Id, @style = "display: none" })
+
         <button type="submit" class="btn btn-primary">Submit</button>
     }
 </div>

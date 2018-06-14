@@ -71,37 +71,49 @@ namespace SalesManagement.BLL
 
         public void SaveTransactionWorkFlow(Transaction form)
         {
-            var key = new Guid();
+            var key = Guid.NewGuid();
 
             using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
             {
                 var prodId = dbContext.Products.Where(t => t.Name == form.Product).Select(t => t.Id).SingleOrDefault();
+                var accTypeId = int.Parse(
+                                        dbContext.AccountTypes
+                                        .Where(w => w.Name == form.AccountType)
+                                        .Select(S => S.Id)?
+                                        .FirstOrDefault()
+                                        .ToString());
 
                 dbContext.Order_Details.Add( new Order_Details
                     {
                         Id = key,
                         CustomerFirstName = form.CustFName,
                         CustomerLastName = form.CustLName,
-                        AccountType = int.Parse(form.AccountType),
+                        AccountType = accTypeId,  
+                        DeliveryAddress = form.DeliveryAddress,
                         AccountNumber = form.AccountNumber
                     }
                 );
 
+                dbContext.SaveChanges();
+
                 dbContext.Orders.Add( new Order
                     {
-                        OrderDate = new DateTime(),
-                        TransactionId = key,
-                        Quantity = form.Quantity,
                         ProductId = prodId,
-                        TotalCost = form.TotalCost 
+                        Quantity = form.Quantity,
+                        TransactionId = key,
+                        TotalCost = (form.TotalCost * form.Quantity),
+                        OrderDate = DateTime.Now
                     }
                 );
+
+                dbContext.SaveChanges();
+
 
                 var budget = new Budget
                 {
                     DepartmentId = 1,
                     Amounted = (decimal)50000.00,
-                    TimeStamped = new DateTime(),
+                    TimeStamped = DateTime.Now,
                     Gains = form.TotalCost * (decimal)dbContext.Products.Where(t => t.Name == form.Product).Select(s => s.ProfitRate)?.FirstOrDefault(),
                     Loss = (decimal)0.00,
 
@@ -111,15 +123,18 @@ namespace SalesManagement.BLL
 
                 dbContext.Budgets.Add(budget);
 
+                dbContext.SaveChanges();
+
+                var updateCount = dbContext.Inventories.Where(w => w.ProductId == prodId).Select(s => s.InStock)?.FirstOrDefault() - form.Quantity;
                 var inventory = new Inventory
                 {
                     ProductId = prodId,
-                    InStock = dbContext.Inventories.Where(w => w.ProductId == prodId).Select(s => s.InStock)?.FirstOrDefault() - form.Quantity
+                    InStock = updateCount
                 };
 
                 dbContext.Inventories.Attach( inventory );
 
-                dbContext.Entry( inventory ).State = EntityState.Modified;
+                dbContext.Entry( inventory ).State = EntityState.Added;
 
                 dbContext.SaveChanges(); 
             }
