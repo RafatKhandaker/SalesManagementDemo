@@ -21,7 +21,9 @@ namespace SalesManagement.UI.Controllers
         [HttpGet]
         public ActionResult Transactions()
         {
-            var user = Session["UserId"].ToString();
+            int user;
+            if ( !int.TryParse(Session["UserId"].ToString(), out user)) { return Redirect("~/Home/Login"); }
+
 
             return (_DBService.CheckAdminAccount( user )) ? 
                         View(_DBService.RetrieveAllTransactions()) : 
@@ -50,7 +52,7 @@ namespace SalesManagement.UI.Controllers
             _DBService.SaveTransactionWorkFlow( newTransaction );
             _DBService.UpdateSalesRecord("admin@gmail.com");
 
-            return PaymentSuccess();
+            return Redirect("~/Account/PaymentSuccess");
         }
 
         [HttpGet]

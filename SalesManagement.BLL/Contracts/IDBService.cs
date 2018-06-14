@@ -11,10 +11,10 @@ namespace SalesManagement.BLL.Contracts
     public interface IDBService
     {
         IEnumerable<Transaction> RetrieveAllTransactions();
-        IEnumerable<Transaction> RetrieveUserTransactions( string userID );
+        IEnumerable<Transaction> RetrieveUserTransactions( int userID );
         Transaction BuildTransactinForm( int pID, Transaction form );
         void SaveTransactionWorkFlow( Transaction form );
         void UpdateSalesRecord( string user );
-        bool CheckAdminAccount( string account );
+        bool CheckAdminAccount( int account );
     }
 }

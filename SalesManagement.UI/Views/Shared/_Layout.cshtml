@@ -24,7 +24,17 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
-                    @if (Session["userId"] != null) {<li>@Html.ActionLink("Account", "Transactions", "Account")</li> }
+                    @if (Session["userId"] != null)
+                    {
+                        <li>@Html.ActionLink("Account", "Transactions", "Account")</li>
+
+                        if (Session["userId"].Equals(1) || Session["userId"].Equals(2))
+                        {
+                            <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+                        }
+                    }
+                  
+
                     
                 </ul>
                 @Html.Partial("_LoginPartial")

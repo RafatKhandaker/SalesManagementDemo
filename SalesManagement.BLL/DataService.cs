@@ -5,10 +5,11 @@ using SalesManagement.Models;
 using SalesManagement.Data;
 using System;
 using System.Data.Entity;
+using System.Globalization;
 
-namespace SalesManagement.BLL
+namespace SalesManagement.BLL 
 {
-    public class DataService : IDBService
+    public class DataService : IDBService 
     {
         public IEnumerable<Transaction> RetrieveAllTransactions()
         {
@@ -16,7 +17,6 @@ namespace SalesManagement.BLL
 
             using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
             {
-                
                 foreach (Order O in dbContext.Orders)
                 {
                     transactions.Add(new Transaction
@@ -29,7 +29,7 @@ namespace SalesManagement.BLL
                             O.Order_Details.DeliveryAddress,
                             O.Order_Details.AccountType.ToString(),
                             O.Quantity,
-                            int.Parse(O.TotalCost.ToString()),
+                            O.TotalCost,
                             O.Order_Details.AccountNumber
                         )
                         );
@@ -40,14 +40,14 @@ namespace SalesManagement.BLL
            
         }
 
-        public IEnumerable<Transaction> RetrieveUserTransactions(string userID)
+        public IEnumerable<Transaction> RetrieveUserTransactions(int userID)
         {
             IList<Transaction> transactions = new List<Transaction>();
 
             using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
             {
 
-                foreach (Sale S in dbContext.Sales.Where( w => w.User.UserName == userID))
+                foreach (Sale S in dbContext.Sales.Where( w => w.User.Id == userID))
                 {
                     transactions.Add(new Transaction
                         (
@@ -59,7 +59,7 @@ namespace SalesManagement.BLL
                             S.Order.Order_Details.DeliveryAddress,
                             S.Order.Order_Details.AccountType.ToString(),
                             S.Order.Quantity,
-                            int.Parse(S.Order.TotalCost.ToString()),
+                            S.Order.TotalCost,
                             S.Order.Order_Details.AccountNumber
                         )
                         );
@@ -73,30 +73,32 @@ namespace SalesManagement.BLL
         {
             var key = Guid.NewGuid();
 
-            using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
+            try
             {
-                var prodId = dbContext.Products.Where(t => t.Name == form.Product).Select(t => t.Id).SingleOrDefault();
-                var accTypeId = int.Parse(
-                                        dbContext.AccountTypes
-                                        .Where(w => w.Name == form.AccountType)
-                                        .Select(S => S.Id)?
-                                        .FirstOrDefault()
-                                        .ToString());
+                using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
+                {
+                    var prodId = dbContext.Products.Where(t => t.Name == form.Product).Select(t => t.Id).SingleOrDefault();
+                    var accTypeId = int.Parse(
+                                            dbContext.AccountTypes
+                                            .Where(w => w.Name == form.AccountType)
+                                            .Select(S => S.Id)?
+                                            .FirstOrDefault()
+                                            .ToString());
 
-                dbContext.Order_Details.Add( new Order_Details
+                    dbContext.Order_Details.Add(new Order_Details
                     {
                         Id = key,
                         CustomerFirstName = form.CustFName,
                         CustomerLastName = form.CustLName,
-                        AccountType = accTypeId,  
+                        AccountType = accTypeId,
                         DeliveryAddress = form.DeliveryAddress,
                         AccountNumber = form.AccountNumber
                     }
-                );
+                    );
 
-                dbContext.SaveChanges();
+                    dbContext.SaveChanges();
 
-                dbContext.Orders.Add( new Order
+                    dbContext.Orders.Add(new Order
                     {
                         ProductId = prodId,
                         Quantity = form.Quantity,
@@ -104,40 +106,42 @@ namespace SalesManagement.BLL
                         TotalCost = (form.TotalCost * form.Quantity),
                         OrderDate = DateTime.Now
                     }
-                );
+                    );
 
-                dbContext.SaveChanges();
+                    dbContext.SaveChanges();
 
 
-                var budget = new Budget
-                {
-                    DepartmentId = 1,
-                    Amounted = (decimal)50000.00,
-                    TimeStamped = DateTime.Now,
-                    Gains = form.TotalCost * (decimal)dbContext.Products.Where(t => t.Name == form.Product).Select(s => s.ProfitRate)?.FirstOrDefault(),
-                    Loss = (decimal)0.00,
+                    var budget = new Budget
+                    {
+                        DepartmentId = 1,
+                        Amounted = (decimal)50000.00,
+                        TimeStamped = DateTime.Now,
+                        Gains = form.TotalCost * (decimal)dbContext.Products.Where(t => t.Name == form.Product).Select(s => s.ProfitRate)?.FirstOrDefault(),
+                        Loss = (decimal)0.00,
 
-                };
+                    };
 
-                budget.budget1 = (decimal)dbContext.Budgets.OrderByDescending(o => o.TimeStamped).Select(s => s.budget1)?.FirstOrDefault() + budget.Gains;
+                    budget.budget1 = (decimal)dbContext.Budgets.OrderByDescending(o => o.TimeStamped).Select(s => s.budget1)?.FirstOrDefault() + budget.Gains;
 
-                dbContext.Budgets.Add(budget);
+                    dbContext.Budgets.Add(budget);
 
-                dbContext.SaveChanges();
+                    dbContext.SaveChanges();
 
-                var updateCount = dbContext.Inventories.Where(w => w.ProductId == prodId).Select(s => s.InStock)?.FirstOrDefault() - form.Quantity;
-                var inventory = new Inventory
-                {
-                    ProductId = prodId,
-                    InStock = updateCount
-                };
+                    var updateCount = dbContext.Inventories.Where(w => w.ProductId == prodId).Select(s => s.InStock)?.FirstOrDefault() - form.Quantity;
+                    var inventory = new Inventory
+                    {
+                        ProductId = prodId,
+                        InStock = updateCount
+                    };
 
-                dbContext.Inventories.Attach( inventory );
+                    dbContext.Inventories.Attach(inventory);
 
-                dbContext.Entry( inventory ).State = EntityState.Added;
+                    dbContext.Entry(inventory).State = EntityState.Added;
 
-                dbContext.SaveChanges(); 
+                    dbContext.SaveChanges();
+                }
             }
+            catch (Exception e) { return; }
         }
 
         public Transaction BuildTransactinForm(int pId, Transaction form)
@@ -169,12 +173,12 @@ namespace SalesManagement.BLL
             }
         }
 
-        public bool CheckAdminAccount(string account)
+        public bool CheckAdminAccount(int account)
         {
             using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
             {
                 return (dbContext.Users
-                            .Where(w => w.UserName == account)
+                            .Where(w => w.Id == account)
                             .Select(s => s.RoleId == 1 || s.RoleId == 2) != null
                             ) ? true : false;
             }
