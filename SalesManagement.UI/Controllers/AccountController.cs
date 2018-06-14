@@ -40,7 +40,7 @@ namespace SalesManagement.UI.Controllers
         [HttpGet]
         public ActionResult PaymentForm( int pID )
         {
-            return View( _DBService.BuildTransactinForm( pID, cost, new Transaction() ));
+            return View( _DBService.BuildTransactinForm( pID, new Transaction() ));
         }
 
         [HttpPost]
