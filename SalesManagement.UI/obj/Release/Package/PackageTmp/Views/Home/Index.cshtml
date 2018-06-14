@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Styles.Render("~/Content/Home/home.css")
+
+<div class="jumbotron header-image" style="background-image: url('/Content/images/HDProcessor.jpg')" >
+    <h1>NEXT.JACK</h1>
+</div>
+<p class="lead">Purchase your next phone with no contract. Our inventory is filled with new
+    @Html.ActionLink("Get started", "Register", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    <br/> products for whole sale prices.
+    Available to mod and build customized <br/> 
+    software for business or personal use
+
+    </p>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            We aim to provide our clients with 
+            swift transaction and our sales management 
+            team with persistent data tracking and 
+            management tools. 
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more Information</h2>
+        <p>Learn more about sales management to enhance business to business relation. Use   Sales management tactics into your business</p>
+        <p><a class="btn btn-default" href="http://www.marketingmo.com/strategic-planning/sales-management-strategy/">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Make a Request</h2>
+        <p>You can easily fill a request to receive consultation that offers the right mix of features and price for your application needs.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

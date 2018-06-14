@@ -1,0 +1,74 @@
+﻿@using System.Web.UI.WebControls
+
+@model SalesManagement.Models.Transaction
+
+@{
+    ViewBag.Title = "PaymentForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/Account/account.css")
+
+<h2>Place a New Order</h2>
+<div class="image">
+    <img src="~/Content/images/phones/@Model.Product.Replace(" ", string.Empty)_.jpg" style="margin-top: 45px;" />
+</div>
+
+<div class="form">
+    @using (Html.BeginForm("PaymentForm", "Account", FormMethod.Post, new { @class = "" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.Label("First Name")
+            @Html.TextBoxFor(m => m.CustFName, new { @id = "FirstName" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Last Name")
+            @Html.TextBoxFor(m => m.CustLName, new { @id = "LastName" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Address")
+            @Html.TextBoxFor(m => m.DeliveryAddress, new { @id = "Address", @style = "width: 195px" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Product")
+            @Html.DisplayFor(m => m.Product)
+        </div>
+        <div class="form-group">
+            @Html.Label("Quantity")
+            @Html.TextBoxFor(m => m.Quantity, new { @id = "Quantity", @style = "width: 50px" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Cost")
+            $@Html.DisplayFor(m => m.TotalCost, new { @id = "totalCostId" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Account")
+            @Html.DropDownListFor(m => m.AccountType, new SelectList(new List<ListItem>
+        {
+            new ListItem { Text = "Credit", Value = "1" },
+            new ListItem { Text = "Debit", Value = "2" },
+            new ListItem { Text = "Gift-Card", Value = "3" },
+            new ListItem { Text = "Store-Credit", Value = "4" },
+            new ListItem { Text = "Money-Order", Value = "5" }
+        }
+       ))
+        </div>
+        <div class="form-group">
+            @Html.Label("Account Number")
+            @Html.TextBoxFor(m => m.AccountNumber, new { @id = "AccNumber", @style = "" })
+        </div>
+        <div class="form-check">
+            @Html.Label("Confirm Order")
+            @Html.CheckBox("Confirm Order")
+        </div>
+
+        @Html.TextBoxFor(m => m.Product, new { @text = Model.Product, @value = Model.Product, @style = "display: none" })
+        @Html.TextBoxFor(m => m.TotalCost, new { @text = Model.TotalCost, @value = Model.TotalCost, @style = "display: none" })
+        @Html.TextBoxFor(m => m.Id, new { @text = Model.Id, @value = Model.Id, @style = "display: none" })
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    }
+</div>
+

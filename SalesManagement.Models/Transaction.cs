@@ -54,5 +54,16 @@ namespace SalesManagement.Models
         public string DeliveryAddress { get; set; }
         public int AccountNumber { get; set; }
 
+        public int gId() { return this.id; }
+        public string gCustFName() { return this.custFName; }
+        public string gCustLName() { return this.custLName; }
+        public string gProduct() { return this.product; }
+        public DateTime gOrderDate() { return this.orderDate; }
+        public int gQuantity() { return this.quantity; }
+        public decimal gTotalCost() { return this.totalCost; }
+        public string gAccountType() { return this.accountType; }
+        public string gDeliveryAddress() { return this.deliveryAddress; }
+        public int gAccountNumber() { return this.accountNumber; }
     }
+
 }

@@ -1,0 +1,5 @@
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\bin\Release\SalesManagement.Models.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\bin\Release\SalesManagement.Models.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\obj\Release\SalesManagement.Models.csprojResolveAssemblyReference.cache
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\obj\Release\SalesManagement.Models.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.Models\obj\Release\SalesManagement.Models.pdb

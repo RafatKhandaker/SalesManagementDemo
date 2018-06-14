@@ -1,0 +1,14 @@
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\SalesManagement.BLL.dll.config
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\SalesManagement.BLL.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\SalesManagement.BLL.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\EntityFramework.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\SalesManagement.Data.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\SalesManagement.Models.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\SalesManagement.Data.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\SalesManagement.Models.pdb
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\EntityFramework.xml
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\obj\Release\SalesManagement.BLL.csprojResolveAssemblyReference.cache
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\obj\Release\SalesManagement.BLL.dll
+C:\Users\SysAdmin\GitProjects\SalesManagementDemo\SalesManagement.BLL\obj\Release\SalesManagement.BLL.pdb
