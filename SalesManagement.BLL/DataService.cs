@@ -21,6 +21,7 @@ namespace SalesManagement.BLL
                 {
                     transactions.Add(new Transaction
                         (
+                            O.ProductId ,
                             O.Order_Details.CustomerFirstName,
                             O.Order_Details.CustomerLastName,
                             O.Product.Name,
@@ -50,6 +51,7 @@ namespace SalesManagement.BLL
                 {
                     transactions.Add(new Transaction
                         (
+                            S.Order.ProductId,
                             S.Order.Order_Details.CustomerFirstName,
                             S.Order.Order_Details.CustomerLastName,
                             S.Order.Product.Name,
@@ -127,6 +129,7 @@ namespace SalesManagement.BLL
         {
             using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
             {
+                form.Id = pId;
                 form.Product = dbContext.Products.Where(w => w.Id == pId).Select(s => s.Name)?.FirstOrDefault();
                 form.TotalCost = (decimal) dbContext.Products.Where(w => w.Id == pId ).Select(s => s.Cost)?.FirstOrDefault();
             }

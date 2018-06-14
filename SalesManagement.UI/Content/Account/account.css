@@ -1,4 +1,19 @@
-﻿.container {
-    width: 45%;
-    float: right;
+﻿footer {
+    margin-top: 50%;
+}
+
+.form {
+    margin-right: 20%;
+    margin-top: 45px;
+    float : right;
+}
+
+h2 {
+    text-align: center;
+}
+
+.image {
+    float : left; 
+    margin-left: 20%;
+    margin-top: 45px;
 }

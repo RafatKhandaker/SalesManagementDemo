@@ -4,6 +4,7 @@ namespace SalesManagement.Models
 {
     public class Transaction
     {
+        private int id;
         private string custFName;
         private string custLName;
         private string product;
@@ -18,6 +19,7 @@ namespace SalesManagement.Models
 
         public Transaction
         ( 
+            int id,
             string custFName,
             string custLName,
             string product,
@@ -29,6 +31,7 @@ namespace SalesManagement.Models
             int accountNumber
         )
         {
+            this.id = id;
             this.custFName = custFName;
             this.custLName = custLName;
             this.product = product;
@@ -40,6 +43,7 @@ namespace SalesManagement.Models
             this.accountNumber = accountNumber;
         }
 
+        public int Id { get; set; }
         public string CustFName { get; set; }
         public string CustLName { get; set; }
         public string Product { get; set; }
