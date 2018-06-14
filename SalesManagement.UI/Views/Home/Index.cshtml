@@ -2,30 +2,38 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+@Styles.Render("~/Content/Home/home.css")
+
+<div class="jumbotron header-image" style="background-image: url('/Content/images/HDProcessor.jpg')" >
+    <h1>NEXT.JACK</h1>
 </div>
+<p class="lead">Purchase your next phone with no contract. Our inventory is filled with new
+    @Html.ActionLink("Get started", "Register", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    <br/> products for whole sale prices.
+    Available to mod and build customized <br/> 
+    software for business or personal use
+
+    </p>
 
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            We aim to provide our clients with 
+            swift transaction and our sales management 
+            team with persistent data tracking and 
+            management tools. 
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Get more Information</h2>
+        <p>Learn more about sales management to enhance business to business relation. Use   Sales management tactics into your business</p>
+        <p><a class="btn btn-default" href="http://www.marketingmo.com/strategic-planning/sales-management-strategy/">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <h2>Make a Request</h2>
+        <p>You can easily fill a request to receive consultation that offers the right mix of features and price for your application needs.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>

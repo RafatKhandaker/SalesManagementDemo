@@ -3,13 +3,10 @@ using System.Web.Mvc;
 using SalesManagement.Models;
 using SalesManagement.BLL.Contracts;
 
-
 namespace SalesManagement.UI.Controllers
 {
     public class AccountController : Controller
     {
-        bool isAdmin;
-
         private readonly IDBService _DBService;
 
 
@@ -19,13 +16,17 @@ namespace SalesManagement.UI.Controllers
         )
         {
             this._DBService = _DBService;
-            isAdmin = true;
         }
 
         [HttpGet]
         public ActionResult Transactions()
         {
-            return (isAdmin) ? View(_DBService.RetrieveAllTransactions()) : View(_DBService.RetrieveUserTransactions(0));
+            var user = Session["UserId"].ToString();
+
+            return (_DBService.CheckAdminAccount( user )) ? 
+                        View(_DBService.RetrieveAllTransactions()) : 
+                        View(_DBService.RetrieveUserTransactions( user )
+                        );
         }
 
 
@@ -39,7 +40,7 @@ namespace SalesManagement.UI.Controllers
         [HttpGet]
         public ActionResult PaymentForm( int pID )
         {
-            return View( _DBService.BuildTransactinForm( pID, new Transaction() ));
+            return View( _DBService.BuildTransactinForm( pID, cost, new Transaction() ));
         }
 
         [HttpPost]

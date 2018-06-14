@@ -39,14 +39,14 @@ namespace SalesManagement.BLL
            
         }
 
-        public IEnumerable<Transaction> RetrieveUserTransactions(int userID)
+        public IEnumerable<Transaction> RetrieveUserTransactions(string userID)
         {
             IList<Transaction> transactions = new List<Transaction>();
 
             using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
             {
 
-                foreach (Sale S in dbContext.Sales.Where( w => w.UserId == userID))
+                foreach (Sale S in dbContext.Sales.Where( w => w.User.UserName == userID))
                 {
                     transactions.Add(new Transaction
                         (
@@ -127,6 +127,7 @@ namespace SalesManagement.BLL
         {
             using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
             {
+                form.Product = dbContext.Products.Where(w => w.Id == pId).Select(s => s.Name)?.FirstOrDefault();
                 form.TotalCost = (decimal) dbContext.Products.Where(w => w.Id == pId ).Select(s => s.Cost)?.FirstOrDefault();
             }
 
@@ -147,6 +148,17 @@ namespace SalesManagement.BLL
                 );
 
                 dbContext.SaveChanges();
+            }
+        }
+
+        public bool CheckAdminAccount(string account)
+        {
+            using (SalesManagementDemoEntities dbContext = new SalesManagementDemoEntities())
+            {
+                return (dbContext.Users
+                            .Where(w => w.UserName == account)
+                            .Select(s => s.RoleId == 1 || s.RoleId == 2) != null
+                            ) ? true : false;
             }
         }
     }

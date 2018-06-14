@@ -7,6 +7,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Styles.Render("~/Content/Account/account.css")
+
 <h2>Place a New Order</h2>
 @using (Html.BeginForm("PaymentForm", "Account", FormMethod.Post, new { @class = "" }))
 {
@@ -33,7 +35,6 @@
     @Html.TextBoxFor( m => m.Quantity, new { @id = "Quantity", @style = "width: 50px" })
 </div>
 <div class="form-group">
-    @Html.Label("Total Cost")
     @Html.LabelFor(m => m.TotalCost,
         new { @id = "Total",
             @text = "" + (@Model.TotalCost * @Model.Quantity) ,

@@ -5,7 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>List of Produts</h2>
+@Styles.Render("~/Content/Products/product.css")
+
+
+<h2>List of Products</h2>
 <p>
     @Html.ActionLink("Add A New Product", "Create")
 </p>
@@ -34,10 +37,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Cost)
         </td>
+        <td>     
+            <img src="~/Content/images/phones/@item.Name.Replace(" ", string.Empty)_.jpg" />
+        </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a href="/Account/PaymentForm?pID=@(item.Id)">Buy</a>
         </td>
     </tr>
 }

@@ -5,10 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Styles.Render("~/Content/Products/details.css")
+
 <h2>Product Details</h2>
 
 <div>
-    <img src="~/Content/img/@(ViewBag.Id).jpg" alt="No Images Found" />
+    <img src="~/Content/images/phones/@Model.Name.Replace(" ", string.Empty)_.jpg" />
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,8 +30,8 @@
         </dd>
 
     </dl>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

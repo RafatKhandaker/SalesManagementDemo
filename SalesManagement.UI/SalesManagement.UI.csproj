@@ -234,11 +234,21 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Account\account.css" />
     <Content Include="Content\Admin\admin.css" />
     <Content Include="Content\Admin\float-chart.css" />
     <Content Include="Content\Admin\style.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Home\home.css" />
+    <Content Include="Content\images\HDProcessor.jpg" />
+    <Content Include="Content\images\phones\Iphone6_.jpg" />
+    <Content Include="Content\images\phones\LGStylo3_.jpg" />
+    <Content Include="Content\images\phones\MotorolaE4_.jpg" />
+    <Content Include="Content\images\phones\SamsungGalaxyJ3_.jpg" />
+    <Content Include="Content\images\phones\SamsungGalaxyS9_.jpg" />
+    <Content Include="Content\Products\details.css" />
+    <Content Include="Content\Products\product.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -312,7 +322,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
